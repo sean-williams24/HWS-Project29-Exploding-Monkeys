@@ -24,7 +24,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var buildings = [BuildingNode]()
     weak var viewController: GameViewController?
+    
 
+    
     override func didMove(to view: SKView) {
         backgroundColor = UIColor(hue: 0.669, saturation: 0.99, brightness: 0.67, alpha: 1)
 
@@ -156,10 +158,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
 
         if firstNode.name == "banana" && secondNode.name == "player1" {
+            viewController?.player2Score += 1
             destroy(player: player1)
         }
 
         if firstNode.name == "banana" && secondNode.name == "player2" {
+            viewController?.player1Score += 1
             destroy(player: player2)
         }
     }
@@ -174,6 +178,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.removeFromParent()
         banana.removeFromParent()
 
+        if viewController!.player1Score == 3 || viewController!.player2Score == 3 {
+             print("GAME OVER")
+            
+        } else {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let newGame = GameScene(size: self.size)
             newGame.viewController = self.viewController
@@ -184,6 +192,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
             let transition = SKTransition.doorway(withDuration: 1.5)
             self.view?.presentScene(newGame, transition: transition)
+            }
         }
     }
     

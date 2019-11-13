@@ -21,6 +21,19 @@ class GameViewController: UIViewController {
     @IBOutlet var playerNumber: UILabel!
     @IBOutlet var launchButton: UIButton!
     
+    @IBOutlet var player1ScoreLabel: UILabel!
+    @IBOutlet var player2ScoreLabel: UILabel!
+    
+    var player1Score = 0 {
+        didSet {
+            player1ScoreLabel.text = "P1 Score: \(player1Score)"
+        }
+    }
+    var player2Score = 0 {
+        didSet {
+            player2ScoreLabel.text = "P2 Score: \(player2Score)"
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -48,6 +61,9 @@ class GameViewController: UIViewController {
         
         angleChanged(self)
         velocityChanged(self)
+        
+        player1ScoreLabel.text = "P1 Score: 0"
+        player2ScoreLabel.text = "P2 Score: 0"
     }
 
     override var shouldAutorotate: Bool {
