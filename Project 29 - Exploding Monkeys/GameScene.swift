@@ -34,6 +34,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         createPlayers()
         
         physicsWorld.contactDelegate = self
+        
+        let windSpeed = Int.random(in: -4 ... 4)
+        physicsWorld.gravity = CGVector(dx: windSpeed, dy: -8)
+        if windSpeed > 0 {
+            viewController?.windSpeedLabel.text = "[WIND SPEED]\n \(windSpeed * 10) MPH Eastbound"
+        } else if windSpeed < 0 {
+            viewController?.windSpeedLabel.text = "[WIND SPEED]\n \(abs(windSpeed * 10)) MPH Westbound"
+        } else {
+            viewController?.windSpeedLabel.text = "[WIND SPEED]\n \(windSpeed)"
+        }
+
 
     }
     
@@ -50,6 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(building)
 
             buildings.append(building)
+            
         }
     }
     

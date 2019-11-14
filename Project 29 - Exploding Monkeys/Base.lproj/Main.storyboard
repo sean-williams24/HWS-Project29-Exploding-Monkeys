@@ -99,6 +99,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIND SPEED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfG-RA-Sty">
+                                <rect key="frame" x="412" y="107" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6hc-Jw-mY6"/>
+                                    <constraint firstAttribute="height" constant="50" id="Pb6-ra-bKm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -106,6 +116,7 @@
                             <constraint firstItem="snG-fx-eXe" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="24" id="2J9-gM-sSX"/>
                             <constraint firstItem="9Wq-hH-x76" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="20" id="2Yx-FR-VU6"/>
                             <constraint firstItem="WA0-pw-bes" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="24" id="APA-bh-B60"/>
+                            <constraint firstItem="mfG-RA-Sty" firstAttribute="centerX" secondItem="WtL-Bl-Uru" secondAttribute="centerX" id="BlJ-Fn-1Ij"/>
                             <constraint firstItem="snG-fx-eXe" firstAttribute="leading" secondItem="yl5-qp-D6b" secondAttribute="trailing" constant="7" id="E6t-yj-Q6n"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="17X-Ut-Y5V" secondAttribute="trailing" constant="14" id="GkI-UI-nMU"/>
                             <constraint firstItem="WtL-Bl-Uru" firstAttribute="top" secondItem="9Wq-hH-x76" secondAttribute="bottom" constant="15" id="GzR-mg-lBh"/>
@@ -117,6 +128,7 @@
                             <constraint firstItem="JBo-A9-glq" firstAttribute="top" secondItem="yl5-qp-D6b" secondAttribute="bottom" constant="31" id="hco-TO-b3D"/>
                             <constraint firstItem="17X-Ut-Y5V" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="13" id="oZh-DM-zSj"/>
                             <constraint firstItem="WA0-pw-bes" firstAttribute="leading" secondItem="9Wq-hH-x76" secondAttribute="trailing" constant="7" id="pCu-KX-Tj0"/>
+                            <constraint firstItem="mfG-RA-Sty" firstAttribute="top" secondItem="WtL-Bl-Uru" secondAttribute="bottom" constant="8" id="qFA-aD-YsA"/>
                             <constraint firstItem="JBo-A9-glq" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="35" id="uIg-2P-b9n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -130,6 +142,7 @@
                         <outlet property="playerNumber" destination="WtL-Bl-Uru" id="jFI-dC-lpX"/>
                         <outlet property="velocityLabel" destination="WA0-pw-bes" id="lcT-68-iQC"/>
                         <outlet property="velocitySlider" destination="9Wq-hH-x76" id="q8H-Xq-6XE"/>
+                        <outlet property="windSpeedLabel" destination="mfG-RA-Sty" id="MJR-Rj-ZJ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

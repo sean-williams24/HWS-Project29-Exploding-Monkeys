@@ -20,6 +20,7 @@ class GameViewController: UIViewController {
     @IBOutlet var velocityLabel: UILabel!
     @IBOutlet var playerNumber: UILabel!
     @IBOutlet var launchButton: UIButton!
+    @IBOutlet var windSpeedLabel: UILabel!
     
     @IBOutlet var player1ScoreLabel: UILabel!
     @IBOutlet var player2ScoreLabel: UILabel!
@@ -64,6 +65,18 @@ class GameViewController: UIViewController {
         
         player1ScoreLabel.text = "P1 Score: 0"
         player2ScoreLabel.text = "P2 Score: 0"
+        
+        let windSpeed = Int.random(in: -4 ... 4)
+        currentGame?.physicsWorld.gravity = CGVector(dx: windSpeed, dy: -8)
+        if windSpeed > 0 {
+            windSpeedLabel.text = "[WIND SPEED]\n \(windSpeed * 10) MPH Eastbound"
+        } else if windSpeed < 0 {
+            windSpeedLabel.text = "[WIND SPEED]\n \(abs(windSpeed * 10)) MPH Westbound"
+        } else {
+            windSpeedLabel.text = "[WIND SPEED]\n \(windSpeed)"
+        }
+        
+        print(windSpeed)
     }
 
     override var shouldAutorotate: Bool {
